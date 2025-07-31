@@ -21,6 +21,8 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'Features', path: '/features' },
     { name: 'How It Works', path: '/howItWorks' }, // Changed to match your route path
+    { name: 'Donate Medicines', path: '/donateMedicines' },
+    { name: 'Need Medicines?', path: '/needMedicines' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ];
