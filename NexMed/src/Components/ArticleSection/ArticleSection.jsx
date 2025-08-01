@@ -2,7 +2,7 @@ import React from 'react';
 import ArticleCard from '../ArticleCard/ArticleCard';
 import css from './ArticleSection.module.css';
 
-const ArticlesSection = () => {
+const ArticleSection = () => {
   const articles = [
     {
       id: 1,
@@ -35,7 +35,11 @@ const ArticlesSection = () => {
         
         <div className={css.articlesGrid}>
           {articles.map(article => (
-            <ArticleCard key={article.id} article={article} />
+            <ArticleCard 
+              key={article.id} 
+              article={article}
+              onReadMore={() => {}}
+            />
           ))}
         </div>
         
@@ -49,4 +53,4 @@ const ArticlesSection = () => {
   );
 };
 
-export default ArticlesSection;
+export default ArticleSection;

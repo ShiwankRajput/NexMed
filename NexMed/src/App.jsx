@@ -8,6 +8,9 @@ import Contact from './Pages/Contact/Contact';
 import LoginSignUp from './Pages/LoginSignUp/LoginSignUp';
 import Home from './Pages/Home/Home';
 import Footer from './Components/Footer/Footer';
+import Article1 from './Components/Article1/Article1';
+import Article2 from './Components/Article2/Article2';
+import Article3 from './Components/Article3/Article3';
 
 function App() {
   return (
@@ -21,8 +24,11 @@ function App() {
         <Route path="/about" element={<About/>} />
         <Route path="/contact" element={<Contact/>} />
         <Route path="/loginSignUp" element={<LoginSignUp/>} />
+        <Route path="/articles/medicine-donation" element={<Article1/>} />
+        <Route path="/articles/healthcare-gap" element={<Article2/>} />
+        <Route path="/articles/ai-medicine" element={<Article3/>} />
       </Routes>
-      <Footer></Footer>
+      <Footer/>
     </BrowserRouter>
   );
 }
