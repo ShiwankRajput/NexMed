@@ -11,6 +11,7 @@ import Footer from './Components/Footer/Footer';
 import Article1 from './Components/Article1/Article1';
 import Article2 from './Components/Article2/Article2';
 import Article3 from './Components/Article3/Article3';
+// import SignUp from './Components/SignUp/SignUp';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/articles/medicine-donation" element={<Article1/>} />
         <Route path="/articles/healthcare-gap" element={<Article2/>} />
         <Route path="/articles/ai-medicine" element={<Article3/>} />
+        {/* <Route path="/signUp" element={<SignUp/>} /> */}
       </Routes>
       <Footer/>
     </BrowserRouter>

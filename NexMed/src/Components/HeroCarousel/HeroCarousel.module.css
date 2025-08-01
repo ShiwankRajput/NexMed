@@ -107,6 +107,74 @@
   transform: scale(1.2);
 }
 
+/* Modal Styles - Updated to match carousel aesthetic */
+.signUpModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+.modalContent {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 1001;
+  animation: modalFadeIn 0.3s ease-out;
+  color: white;
+  padding: 2rem;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1002;
+  transition: all 0.3s ease;
+}
+
+.closeButton:hover {
+  color: #4CAF50;
+  transform: rotate(90deg);
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .hero {
@@ -120,6 +188,12 @@
   
   .carouselContent p {
     font-size: 1rem;
+  }
+
+  .modalContent {
+    width: 95%;
+    max-height: 85vh;
+    padding: 1.5rem;
   }
 }
 
@@ -135,5 +209,18 @@
   
   .carouselContent h1 {
     font-size: 1.8rem;
+  }
+
+  .modalContent {
+    padding: 1.2rem;
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+
+  .closeButton {
+    top: 10px;
+    right: 10px;
   }
 }

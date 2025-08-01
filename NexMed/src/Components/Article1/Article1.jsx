@@ -106,7 +106,6 @@ const Article1 = () => {
         </div>
         <p className={styles.note}><em>*Always call ahead to confirm acceptance policies.*</em></p>
       </section>
-      
 
       <section className={`${styles.guideSection} ${styles.safetySection}`}>
         <h2>Safety Considerations</h2>
@@ -120,13 +119,14 @@ const Article1 = () => {
           <p>By donating responsibly, you can make a real difference in someone's life while protecting public health and the environment.</p>
         </div>
         
-        {/* Add the Back to Articles button */}
-        <button 
-          className={styles.backButton}
-          onClick={() => navigate('/articles')}
-        >
-          ← Back to Articles
-        </button>
+        <div className={styles.backButtonContainer}>
+          <button 
+            className={styles.backButton}
+            onClick={() => navigate(-1)}  
+          >
+            ← Back to Articles
+          </button>
+        </div>
       </section>
     </article>
   );
