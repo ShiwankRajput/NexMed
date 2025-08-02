@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { FaArrowRight, FaTimes } from 'react-icons/fa';
+import { FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import css from './HeroCarousel.module.css';
-import SignUp from '../SignUp/SignUp'; // Import your SignUp component
 
 const HeroCarousel = () => {
   const carouselItems = [
@@ -27,11 +27,10 @@ const HeroCarousel = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-  const [showSignUp, setShowSignUp] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!isHovered && !showSignUp) { // Pause when signup is shown
+      if (!isHovered) {
         setCurrentIndex((prevIndex) => 
           prevIndex === carouselItems.length - 1 ? 0 : prevIndex + 1
         );
@@ -39,18 +38,10 @@ const HeroCarousel = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [isHovered, carouselItems.length, showSignUp]);
+  }, [isHovered, carouselItems.length]);
 
   const goToSlide = (index) => {
     setCurrentIndex(index);
-  };
-
-  const handleSignUpClick = () => {
-    setShowSignUp(true);
-  };
-
-  const handleCloseSignUp = () => {
-    setShowSignUp(false);
   };
 
   return (
@@ -70,9 +61,9 @@ const HeroCarousel = () => {
               <div className={css.carouselContent}>
                 <h1>{item.title}</h1>
                 <p>{item.description}</p>
-                <button className={css.signUpBtn} onClick={handleSignUpClick}>
+                <Link to="/signup" className={css.signUpBtn}>
                   SIGN UP <FaArrowRight />
-                </button>
+                </Link>
               </div>
             </div>
           ))}
@@ -88,19 +79,6 @@ const HeroCarousel = () => {
           ))}
         </ul>
       </div>
-
-      {/* SignUp Modal */}
-      {showSignUp && (
-        <div className={css.signUpModal}>
-          <div className={css.modalContent}>
-            <button className={css.closeButton} onClick={handleCloseSignUp}>
-              <FaTimes />
-            </button>
-            <SignUp />
-          </div>
-          <div className={css.modalOverlay} onClick={handleCloseSignUp}></div>
-        </div>
-      )}
     </section>
   );
 };

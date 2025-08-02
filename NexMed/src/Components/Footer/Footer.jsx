@@ -1,19 +1,19 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import css from './Footer.module.css';
 
 const Footer = () => {
   return (
     <footer className={css.footer}>
-      <div className={css.footerContainer}>
-        {/* Top Section */}
-        <div className={css.footerTop}>
-          <div className={css.footerColumn}>
-            <h3 className={css.footerTitle}>About NexMed</h3>
-            <p className={css.footerAbout}>
-              NexMed is a platform connecting medicine donors with those in need, ensuring safe and responsible distribution of unused medications to underserved communities.
+      <div className={css.container}>
+        {/* Main Footer Content */}
+        <div className={css.grid}>
+          <div className={css.brandColumn}>
+            <h3 className={css.logo}>NexMed</h3>
+            <p className={css.description}>
+              Connecting medicine donors with those in need through safe and responsible distribution.
             </p>
-            <div className={css.socialLinks}>
+            <div className={css.socials}>
               <a href="#" aria-label="Facebook"><FaFacebook /></a>
               <a href="#" aria-label="Twitter"><FaTwitter /></a>
               <a href="#" aria-label="Instagram"><FaInstagram /></a>
@@ -21,74 +21,51 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className={css.footerColumn}>
-            <h3 className={css.footerTitle}>Quick Links</h3>
-            <ul className={css.footerLinks}>
+          <div className={css.linksColumn}>
+            <h4 className={css.heading}>Quick Links</h4>
+            <ul className={css.links}>
               <li><a href="#">Home</a></li>
-              <li><a href="#">Donate Medicines</a></li>
-              <li><a href="#">Request Medicines</a></li>
+              <li><a href="#">Donate</a></li>
+              <li><a href="#">Request</a></li>
               <li><a href="#">How It Works</a></li>
-              <li><a href="#">Success Stories</a></li>
-              <li><a href="#">AI Health Assistant</a></li>
-            </ul>
-          </div>
-
-          <div className={css.footerColumn}>
-            <h3 className={css.footerTitle}>Important Info</h3>
-            <ul className={css.footerLinks}>
-              <li><a href="#">Eligible Medicines</a></li>
-              <li><a href="#">Safety Guidelines</a></li>
-              <li><a href="#">Legal Disclaimer</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
               <li><a href="#">FAQ</a></li>
             </ul>
           </div>
 
-          <div className={css.footerColumn}>
-            <h3 className={css.footerTitle}>Contact Us</h3>
-            <ul className={css.contactInfo}>
-              <li>
-                <FaMapMarkerAlt />
-                <span>123 Health Avenue, Medical City, 100001</span>
-              </li>
-              <li>
-                <FaPhone />
-                <span>+1 (800) MED-HELP</span>
-              </li>
-              <li>
-                <FaEnvelope />
-                <span>help@nexmed.org</span>
-              </li>
+          <div className={css.linksColumn}>
+            <h4 className={css.heading}>Legal</h4>
+            <ul className={css.links}>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms</a></li>
+              <li><a href="#">Disclaimer</a></li>
+              <li><a href="#">Safety</a></li>
             </ul>
-            <div className={css.newsletter}>
-              <h4>Subscribe to our Newsletter</h4>
-              <form className={css.newsletterForm}>
-                <input type="email" placeholder="Your email address" required />
-                <button type="submit">Subscribe</button>
-              </form>
-            </div>
+          </div>
+
+          <div className={css.newsletterColumn}>
+            <h4 className={css.heading}>Stay Updated</h4>
+            <form className={css.newsletter}>
+              <input 
+                type="email" 
+                placeholder="Your email" 
+                className={css.input} 
+                required 
+              />
+              <button type="submit" className={css.button}>
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className={css.footerBottom}>
-          <div className={css.copyright}>
+        {/* Footer Bottom */}
+        <div className={css.bottom}>
+          <p className={css.copyright}>
             &copy; {new Date().getFullYear()} NexMed. All rights reserved.
-          </div>
-          <div className={css.legalLinks}>
-            <a href="#">Privacy Policy</a>
-            <span>|</span>
-            <a href="#">Terms of Use</a>
-            <span>|</span>
-            <a href="#">Cookie Policy</a>
-          </div>
-          <div className={css.healthDisclaimer}>
-            <p>
-              <strong>Important:</strong> NexMed facilitates medicine redistribution but does not provide medical advice. 
-              Always consult a healthcare professional before using any medication.
-            </p>
-          </div>
+          </p>
+          <p className={css.disclaimer}>
+            Note: NexMed facilitates medicine redistribution but does not provide medical advice.
+          </p>
         </div>
       </div>
     </footer>
